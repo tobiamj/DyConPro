@@ -23,15 +23,4 @@ for loop1=1:tt
     NCNCp(loop1,:)=pval;
 end
 
-% Xbar=squeeze(mean(X,1));
-% for loop2=1:rr
-%    [rcor,pval]=corr(Xbar(loop2,:)',subvars'); 
-%    sNCNC(loop2,:)=rcor;
-%    sNCNCp(loop2,:)=pval;
-% end
-% 
-% sNCNC=dcp_1Dto2D(sNCNC,200);
-% sNCNCp=dcp_1Dto2D(sNCNCp,200);
-
-
 end
