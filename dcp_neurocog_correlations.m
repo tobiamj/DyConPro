@@ -11,7 +11,7 @@ function [NCNC,NCNCp]=dcp_neurocog_correlations(X,subvars)
 %   correlation value in a time x connection 2D matrix
 % 4.  NCNCp is the same as NCNC but holds p-values instead of correlation
 %   coefficients
-
+% Nota bene: T=dcp_mat2tens(NCNC) will create the tensor of NCNCs
 
 [tt,rr,~]=size(X);
 NCNC=zeros(tt,rr);
