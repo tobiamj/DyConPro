@@ -1,4 +1,4 @@
-function [NCNC,NCNCp,sNCNC,sNCNCp]=dcp_neurocog_correlations(X,subvars)
+function [NCNC,NCNCp]=dcp_neurocog_correlations(X,subvars)
 
 % Code by Michael J. Tobia, Ph.D. as part of the 
 % Dynamic Connectivity Processing (DCP) toolbox
