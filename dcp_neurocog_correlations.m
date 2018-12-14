@@ -1,4 +1,4 @@
-function [NCNC,NCNCp]=dcp_neurocog_correlations(X,subvars)
+function [NCNC,NCNCp,sNCNC,sNCNCp]=dcp_neurocog_correlations(X,subvars)
 
 % Code by Michael J. Tobia, Ph.D. as part of the 
 % Dynamic Connectivity Processing (DCP) toolbox
@@ -11,7 +11,7 @@ function [NCNC,NCNCp]=dcp_neurocog_correlations(X,subvars)
 %   correlation value in a time x connection 2D matrix
 % 4.  NCNCp is the same as NCNC but holds p-values instead of correlation
 %   coefficients
-% Nota bene: T=dcp_mat2tens(NCNC) will create the tensor of NCNCs
+
 
 [tt,rr,~]=size(X);
 NCNC=zeros(tt,rr);
@@ -22,5 +22,16 @@ for loop1=1:tt
     NCNC(loop1,:)=rcor;
     NCNCp(loop1,:)=pval;
 end
+
+% Xbar=squeeze(mean(X,1));
+% for loop2=1:rr
+%    [rcor,pval]=corr(Xbar(loop2,:)',subvars'); 
+%    sNCNC(loop2,:)=rcor;
+%    sNCNCp(loop2,:)=pval;
+% end
+% 
+% sNCNC=dcp_1Dto2D(sNCNC,200);
+% sNCNCp=dcp_1Dto2D(sNCNCp,200);
+
 
 end

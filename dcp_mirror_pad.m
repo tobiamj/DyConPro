@@ -2,7 +2,7 @@ function [mirpad_sig,mfront,mrear]=dcp_mirror_pad(x,flag)
 
 % Code by Michael J. Tobia, Ph.D. as part of the 
 % Dynamic Connectivity Processing (DCP) toolbox
-% DCP_v1.01.1 release 6/18/2018
+% DCP_v1.1 release 12/18/2018
 
 % Inputs:
 % 1. x is a signal time series (row vector),
