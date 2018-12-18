@@ -2,23 +2,7 @@ function [dcs,ifc]=dcp_dcs(x)
 
 % Code by Michael J. Tobia, Ph.D. as part of the 
 % Dynamic Connectivity Processing (DCP) toolbox
-% DCP_v1.01 private release 1/10/2018
-% 
-% Inputs:
-% 1. x is a RxC matrix of time series with time down the column and 
-%   channels across the columns
-% 
-% Outputs:
-% 1. dcs is the wideband filtered instantaneous time-varying correlation 
-%   of two signals. This will be a tensor of size CxCxR
-% 2. ifc is the wideband (or narrow if pre-filtered) instantaneous 
-%   time-varying correlation of two signals. This will be a tensor of size CxCxR
-% 
-% Default: output tensors have diagonals set to 0 at each time point
-% 
-% Notes: you might want to use (abs(dcs)) to get measure of coherence
-%   independent of correlation/anticorrelation
-% 
+% DCP_v1.0 release 10/18/2017
 
 rng(1);
 [row,col]=size(x);
@@ -39,8 +23,8 @@ end
 ifc=cos(ifc);
 
 dcs=ifc;
-wb=waitbar(0,'Calculating DCS & iFC');
-steps=col;
+% wb=waitbar(0,'Calculating DCS & iFC');
+% steps=col;
 for loop1=1:col
     for loop2=1:col
         temp=squeeze(dcs(:,loop1,loop2));
@@ -53,7 +37,7 @@ for loop1=1:col
         dcs(:,loop1,loop2)=zeros(1,length(temp));
         end
     end
-    waitbar(loop1/steps,wb);
+%     waitbar(loop1/steps,wb);
 end
-close(wb)
+% close(wb)
 
